@@ -1,0 +1,158 @@
+\documentclass[a4paper,11pt]{cv4tw}% options are inherited from article class, and automatically given to this class
+%% \usetheme[optional scheme]{theme}
+\usetheme[minuit]{sharp}
+%read env variables with secrets
+\usepackage{catchfile}
+\newcommand{\getenv}[2][]{%
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{}%
+  \ifx\temp\empty\def\temp{UNDEFINED}\fi
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+% Not happy with the default style, or bullet ? Define yours !
+\setmystyle[missionbullet]{\color{soft}$>$~~}
+\setmystyle[assetbullet]{\color{icons}\faBook}
+\setmystyle[fieldratefull]{\color{icons}\faCircle}
+\setmystyle[fieldrateempty]{\color{icons}\faCircleO}
+% If you need a custom contact, you can define a bullet here :
+\setmystyle[custom0bullet]{\color{icons}\faBolt}
+\usepackage[utf8]{inputenc}
+%\academictitle{PhD}
+\firstname{Karol}
+\lastname{Czułkowski}
+\title{scala developer}
+\quote{\itshape Self employed scala developer with 10 years of experience}
+
+%\cvpicture{./samplepic.jpg}
+% Add up to 10 assets (0 to 9)
+\setcvasset[0]{\emph{Experienced} software developer}
+\setcvasset[1]{\emph{Functional} Programming}
+\setcvasset[2]{Designed \emph{Space travels}}
+\setcvasset[3]{\emph{TOP5} most-translated author}
+\setcvcontact[email]{karol.czulkowski@gmail.com}
+\setcvcontact[cellphone]{\getenv{CELLPHONE}}
+\setcvcontact[linkedin]{karol-czulkowski}
+\setcvcontact[twitter]{@kczulko}
+\setcvcontact[github]{kczulko}
+\setcvcontact[spokenlanguages]{pl,en}
+\setcvcontact[age]{\getenv{DATE_OF_BIRTH}}
+\setcvcontact[address]{
+  \getenv{ADDRESS_STREET}\\\getenv{ADDRESS_ZIP_CITY}\\\getenv{ADDRESS_COUNTRY}
+}
+% colors for \hyperref urls
+\hypersetup{
+  colorlinks = false,
+  breaklinks = true,
+  linkbordercolor = green,
+  urlbordercolor = {0 1 1}
+}
+\begin{document}
+\section{Experience}
+%----------------------------------------------------------------------------
+\story{scala developer}
+      {\href{https://www.jit.team}{Jit Team} (under contract to Nordea Poland)}
+      {since 07.2019\\Gdynia, Poland}
+      {scala, cats, http4s,\\shapeless, tagless-final,
+        \\bazel, nixos, kafka,\\elasticsearch, microservices}
+	  {Development of HDFS metadata indexing hub (proprietary solution akin to \href{https://egeria.odpi.org}{egeria}). We build microservice oriented system on the top of Elasticsearch. Our app allows datascientists to search for any data that exists within Nordea's datalake. Please find some of my achievements below:
+	    \begin{missions}
+		\item I've introduced (and teached) modern FP architecture across microservices
+		\item I've unified technology stack into more FP oriented one (better testability)
+	    \end{missions}
+      }
+%----------------------------------------------------------------------------
+\story{scala developer}
+      {\href{https://www.intel.com/content/www/us/en/jobs/locations/poland.html}{Intel Technology Poland}}
+      {07.2018 - 06.2019\\Gdańsk, Poland}
+	  {compilers, shapeless,\\scala-macros, fs2, zio,\\monocle, scalaz,\\antlr4, sbt}
+	  {I worked with presilicon group under Intel Network Division (before aquisition it was Fulcrum Microsystems from Caltech). Initially, I was hired to develop scala simulation model for next generation ethernet switch. Due to requirements change within our organisation, this activity was abandoned. Since our group lacked good, modern compiler support for presilicon memory design activities, we decided to focus on \href{https://www.accellera.org/downloads/standards/systemrdl}{SystemRDL 1.0} (SRDL) compiler development. Here are some of my key achievements:
+	    \begin{missions}
+        \item I've developed probably first fully compliant, built-in SRDL1.0 preprocessor
+        \item Redefined SRDL1.0 grammar (official one had bugs)
+   	    \item I made pure functional, next-gen intel's eth switch memory model
+	    \end{missions}
+      }
+%----------------------------------------------------------------------------
+\story{senior java developer}
+      {\href{https://diversecg.pl/}{DCG} (under contract to Nordea Capital Markets)}
+      %% {03.2018-06.2018\\Gdańsk, Poland}
+      {March - June, 2018\\Gdańsk, Poland}
+	  {java, spark, docker\\java-testcontainers}
+	  {I've joined a team responsible for Market Liquidity Credit Risk (MLQR) app development. MLQR was internal, proprietary application responsible for calulating daily - executed as batch job - credit risk coefficient. Please find below some of my achievements:
+	    \begin{missions}
+		\item Developed local spark deployment of ETL job for test configuration
+        \item Code reviews \& bug fixing
+	    \end{missions}
+      }
+%----------------------------------------------------------------------------
+\story{scala developer}{\href{https://www.scalac.io}{Scalac}}
+      {2017 - 2018\\Gdańsk, Poland}
+	  {scala, akka-streams,\\graphql, cassandra,\\kafka, play, mtl}
+	  {During almost all of my time spend at Scalac, I worked for Qvantel - a Finnish business solution systems provider for telco companies. As a Scalac we developed for Qvantel several microservices, mostly responsible for ETL jobs (messages transformation and ingesting). Our scallable apps were deployed on emerging markets like Bolivia, Equadoror Honduras. For one of them we satisfied client's constraint to process \approx12k messages per second. More about this cooperation can be found \href{http://media.licdn.com/embeds/media.html?src=https\%3A\%2F\%2Fissuu.com\%2Foutlookpublishing\%2Fdocs\%2Fqvantel\&amp;url=https\%3A\%2F\%2Fissuu.com\%2Foutlookpublishing\%2Fdocs\%2Fqvantel\&amp;type=text\%2Fhtml\&amp;schema=issuu}{<<here>>}.
+      }
+%----------------------------------------------------------------------------
+\story{software engineer}
+      {\href{https://www.intel.com/content/www/us/en/jobs/locations/poland.html}
+        {Intel Technology Poland}}
+      {2014 - 2017\\Gdańsk, Poland}
+	  {javaee, c\#, c++11,\\gradle, docker,\\nodejs, bash}
+	  {Some description}
+%----------------------------------------------------------------------------
+\story{software engineer}{\href{https://www.finastra.com/}{Misys}}
+      {2012 - 2014\\Gdynia, Poland}
+	  {c++, c, bash}
+	  {Some description}
+%----------------------------------------------------------------------------
+\story{software engineer}
+      {\href{https://sii.pl/en/}{SII} (under contract to Intel Technology Poland)}
+      {2011 - 2012\\Gdańsk, Poland}
+	  {c\#, tcl,\\python, bash}
+	  {Some description}
+%----------------------------------------------------------------------------
+\story{software engineer}{\href{https://micromade.pl}{Micromade}}
+      {2010 - 2011\\Gdańsk, Poland}
+	  {c++, c, vcl}
+	  {Some description}
+%----------------------------------------------------------------------------
+\story{internship}{\href{https://voicelab.ai}{Voicelab}}
+      {2009 - 2010\\Gdańsk, Poland}
+	  {matlab, c, php}
+	  {Some description}
+%----------------------------------------------------------------------------
+\section{Education}
+\story{M.Sc., engineer}{Gdańsk University of Technology}{2006 - 2011\\Gdańsk, Poland}
+      {Control Engineering\\and Robotics}
+      {Faculty of Electronics, Telecommunications and Informatics:
+        \begin{missions}
+          \item Master thesis: \textit{Implementation of lattice adaptive filters on the CUDA platform}
+          \item \emph{Dean's disctinction} for
+            \href{https://projektgrupowy.eti.pg.gda.pl/editions/2/projects/496/posters/138}
+                 {\itshape Anti-collision system for industrial robots}
+        \end{missions}
+      }
+\section{Skills}
+\begin{skills} {Language}
+\skill[Polish]{ Mother tongue }
+\skill[English]{ Fluent }
+%% \skill[Esperanto]{ Fluent}
+%% \skill[Dutch]{ Notions}
+%% \skill[German]{ Notions}
+\end{skills}
+\begin{skills}{Management}
+\skill[Museum]{in Amiens}
+\end{skills}
+\begin{skills}{Writing}
+\skill[Novels]{more than 60, mainly in Adventure and Science Fiction genres}
+\skill[Songs and Poems]{more than 180 in various genres}
+\end{skills}
+% Argument for fields env. are title, cols count and max rate
+\begin{fields}{Literary genre}{3}{5}
+\field{Science-Fiction}{5}
+\field{Adventure}{5}
+\field{Essay}{3}
+\field{Suspense}{3}
+\field{Thriller}{2}
+\field{Romance}{0}
+\end{fields}
+
+%\textit{I hereby give consent for my personal data included in my offer to be processed for the purposes of recruitment, in accordance with the Personal Data Protection Act dated 23.08.1997 (uniform text: Journal of Laws of the Republic of Poland 2002 No 101, item 926 with further amendments).}
+
+\end{document}
