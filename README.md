@@ -8,9 +8,9 @@
 {
   DATE_OF_BIRTH    = "January 1st 1900";
   CELLPHONE        = "999 999 999";
-  ADDRESS_STREET   = ...;
-  ADDRESS_ZIP_CITY = ...;
-  ADDRESS_COUNTRY  = ...;
+  ADDRESS_STREET   = "...";
+  ADDRESS_ZIP_CITY = "...";
+  ADDRESS_COUNTRY  = "...";
 }
 
 ```
