@@ -8,7 +8,7 @@
     name = "kczulko-cv";
 
     secrets = import ./secrets.nix;
-    
+
     derivationParams = {
       name = name;
 
