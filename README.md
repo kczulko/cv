@@ -26,6 +26,5 @@ git-crypt unlock your_symmetric.key
 Execute:
 
 ```bash
-nix-shell --command 'lualatex -interaction=nonstopmode kczulko.tex'
+nix-build
 ```
-

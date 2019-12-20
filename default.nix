@@ -5,11 +5,15 @@
 }) {} }: with pkgs;
 
   let
+    name = "kczulko-cv";
+
     secrets = import ./secrets.nix;
-  in
-    stdenv.mkDerivation {
-      name = "kczulko-cv";
-      src = ./content;
+    
+    derivationParams = {
+      name = name;
+
+      src = ./src;
+
       buildInputs = [
         (texlive.combine {
           inherit (texlive)
@@ -34,12 +38,14 @@
 
       buildPhase = ''
         export TEXMFVAR=$(pwd)
-        lualatex -interaction=nonstopmode $src/kczulko-cv.tex
+        lualatex -interaction=nonstopmode $src/$name.tex
       '';
 
       installPhase = ''
         mkdir -p $out
-        cp kczulko-cv.log $out
-        cp kczulko-cv.pdf $out
+        cp $name.log $out
+        cp $name.pdf $out
       '';
-    } // secrets
+    };
+  in
+    stdenv.mkDerivation (derivationParams // secrets)
