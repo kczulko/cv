@@ -8,3 +8,4 @@
 *.pdf
 *.key
 result
+luatex-cache
