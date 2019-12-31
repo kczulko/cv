@@ -2,5 +2,9 @@
 */*.aux
 */*.out
 */*.pdf
+*.log
+*.aux
+*.out
+*.pdf
 *.key
 result
