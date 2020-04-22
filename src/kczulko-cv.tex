@@ -32,7 +32,7 @@
 \setcvcontact[linkedin]{karol-czulkowski}
 \setcvcontact[twitter]{@kczulko}
 \setcvcontact[github]{kczulko}
-\setcvcontact[spokenlanguages]{pl,en}
+\setcvcontact[spokenlanguages]{pl, en}
 \setcvcontact[age]{\getenv{DATE_OF_BIRTH}}
 \setcvcontact[address]{
   \getenv{ADDRESS_STREET}\\\getenv{ADDRESS_ZIP_CITY}\\\getenv{ADDRESS_COUNTRY}
@@ -51,14 +51,16 @@
       {\href{https://www.jit.team}{Jit Team} (under contract to Nordea Poland)}
       {since 07.2019\\Gdynia, Poland}
       {scala, cats, http4s,\\shapeless, tagless-final,
-        \\bazel, nixos, kafka,\\elasticsearch, microservices}
+        \\bazel, nix, kafka,\\elasticsearch, microservices}
       {Development of HDFS metadata indexing hub (proprietary solution akin to \href{https://egeria.odpi.org}{egeria}).
-        We build microservice oriented system on the top of Elasticsearch.
+        It was microservice-oriented system build on the top of Elasticsearch.
         Our app allows datascientists to search for any data that exists within Nordea's datalake.
         Please find some of my achievements below:
         \begin{missions}
-        \item I've introduced (and teached) modern FP architecture across microservices
+        \item I've introduced (and teached internal workers) modern FP architecture across microservices
         \item I've unified technology stack into more FP oriented one (better testability)
+        \item Implemented and refactored most of microservices
+        \item Planned and designed several feautures
         \end{missions}
       }
 %----------------------------------------------------------------------------
@@ -74,7 +76,7 @@
         \begin{missions}
         \item I've developed probably first fully compliant, built-in SRDL1.0 preprocessor
         \item Redefined SRDL1.0 grammar (official one had bugs)
-        \item I made pure functional, next-gen Intel's eth switch memory model
+        \item Designed and implemented purely functional memory model for next-gen Intel's ethernet switch simulator
         \end{missions}
       }
 %----------------------------------------------------------------------------
@@ -108,33 +110,52 @@
       {2014 - 2017\\Gdańsk, Poland}
       {java ee, c\#, c++11,\\gradle, docker,\\nodejs, bash}
       {Initially I was hired as experienced validation engineer for newly formed
-        \href{https://www.intel.com/content/www/us/en/architecture-and-technology/rack-scale-design-overview.html}{Rackscale Design (RSD)} team.
-        My role was to develop high quality testing libraries and provide mentorship for other team members. After some time I've joined a development team of
+        \href{https://www.intel.com/intelRSD}{Rackscale Design (RSD)} team. My role was to develop high quality testing libraries and provide mentorship for
+        other team members. After some time I've joined a development team of
         \href{https://www.intel.com/content/www/us/en/architecture-and-technology/rack-scale-design/pod-manager-user-guide-v2-1.html}{POD Manager} component,
         where I spend most of my time at Intel. I've been developing there a RESTful web service, responsible for assembly and system composition of Intel's RSD. 
         Some of my work can still be found here: \emph{\href{https://github.com/intel/intelRSD}{https://github.com/intel/intelRSD}}
-        }
+      }
 %----------------------------------------------------------------------------
 \story{software engineer}{\href{https://www.finastra.com/}{Misys}}
       {2012 - 2014\\Gdynia, Poland}
-      {c++, c, java,\\groovy bash}
-      {I've joined Misys to support Kondor+ product development. }
+      {c++, c, java,\\groovy, bash}
+      {I've joined Misys to support Kondor+ product development.
+        Apart from that I've done some work around other products related to Kondor+
+        like MarkitWire adapter, which gave customers ability to use Kondor+ together
+        with Markit stack.
+      }
 %----------------------------------------------------------------------------
 \story{software engineer}
       {\href{https://sii.pl/en/}{SII} (under contract to Intel Technology Poland)}
       {2011 - 2012\\Gdańsk, Poland}
       {c\#, tcl,\\python, bash}
-      {Some description}
+      {I was hired to external team working for Intel Technology Poland. The team
+        took over responsibility for \href{https://en.wikipedia.org/wiki/Mdadm}{mdadm}
+        validation, where Intel made support for their metadata. Later on I was
+        responsible for Intel's `iscsi` driver validation. Please find below some
+        of my key achievements:
+        \begin{missions}
+        \item Implemented python-based testing framework for CIM RAID interface
+        \item Developed dozen of mdadm tests
+        \item Developed c\# library for storage discovery
+        \end{missions}
+      }
 %----------------------------------------------------------------------------
 \story{software engineer}{\href{https://micromade.pl}{Micromade}}
       {2010 - 2011\\Gdańsk, Poland}
       {c++, c, vcl}
-      {Some description}
+      {At Micromade I was responsible for new user interface of `bibinet` application.
+        It is a management software for their well known product for work time
+        tracking and access control.
+      }
 %----------------------------------------------------------------------------
 \story{internship}{\href{https://voicelab.ai}{Voicelab}}
       {2009 - 2010\\Gdańsk, Poland}
       {matlab, c, php}
-      {Some description}
+      {During my studies I was hired by Voicelab to develop several matlab simulations
+        and php-based website utilizing noise reduction algorithms for sound recordings.
+      }
 %----------------------------------------------------------------------------
 \section{Education}
 \story{M.Sc., engineer}{Gdańsk University of Technology}{2006 - 2011\\Gdańsk, Poland}
@@ -158,9 +179,9 @@
 \begin{skills}{Management}
 \skill[Museum]{in Amiens}
 \end{skills}
-\begin{skills}{Writing}
-\skill[Novels]{more than 60, mainly in Adventure and Science Fiction genres}
-\skill[Songs and Poems]{more than 180 in various genres}
+\begin{skills}{Programming}
+\skill[FP]{more than 60, mainly in Adventure and Science Fiction genres}
+\skill[hmmm]{more than 180 in various genres}
 \end{skills}
 % Argument for fields env. are title, cols count and max rate
 \begin{fields}{Literary genre}{3}{5}
