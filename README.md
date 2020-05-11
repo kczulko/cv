@@ -23,7 +23,7 @@ git-crypt unlock your_symmetric.key
 
 ## BUILD
 
-Execute:
+Clone this repo, setup key and execute:
 
 ```bash
 nix-build
