@@ -1,3 +1,6 @@
+% latexrelease is a workaround for a new latex system errors
+% coming from compilation process
+\RequirePackage[2020-02-02]{latexrelease}
 \documentclass[a4paper,11pt]{cv4tw}% options are inherited from article class, and automatically given to this class
 %% \usetheme[optional scheme]{theme}
 \usetheme[minuit]{sharp}
@@ -50,13 +53,14 @@
 \story{functional engineer}
       {\href{https://www.tweag.io}{tweag.io}}
       {10.2021 - now\\Remote}
-      {bazel, haskell, scala\\golang, akka-typed}
-      { Tweag is a software innovation lab from France gathering people around
+      {bazel, haskell, scala\\golang, akka-typed\\akka-streams, sbt}
+      { Tweag is a software innovation lab from France, gathering people around
         functional programming (mostly \href{https://www.haskell.org}{haskell}) and modern
         software distribution stack (\href{https://nixos.org}{nixos} \& \href{https://bazel.build}{bazel})
         \begin{missions}
-          \item Contribution to \href{https://github.com/tweag/gazelle_cabal}{https://github.com/tweag/gazelle\_cabal}
-          \item Work for a \href{https://www.heb.com}{H-E-B} client (grocery retail from Texas)
+          \item Maintainer of \href{https://github.com/tweag/gazelle_cabal}{https://github.com/tweag/gazelle\_cabal}
+          \item Under contract to \href{https://www.digitalasset.com}{Digital Asset} - DAML smart-contract platform
+          \item Under contract to \href{https://www.heb.com}{H-E-B} - grocery retail from Texas, USA
         \end{missions}
       }
 %----------------------------------------------------------------------------
@@ -65,7 +69,7 @@
       {08.2020 - 10.2021\\Wrocław, Poland}
       {scala, akka-http, cats,\\akka-streams, kafka,\\bash, gradle}
       {Member of Next Generation Archive solution team. Delivering a system designed to store banking documents.
-        It is a typical CRUD web-based application build on the top of Hitachi database solution.
+        It was a typical CRUD, web-based application build on the top of Hitachi database.
         As a developer I was responsible for implementing new features, improvements, bug fixes, L3 support and doing code reviews.
       }
 %----------------------------------------------------------------------------
@@ -77,30 +81,27 @@
       {Development of HDFS metadata indexing hub (proprietary solution akin to \href{https://egeria.odpi.org}{egeria}).
         Product I work on has service oriented architecture build on the top of
         Elasticsearch. It allows data scientists to search for any data that exists
-        within Nordea's data lake.
-        Please find some of my achievements below:
+        within Nordea's data lake. Please find some of my achievements below:
         \begin{missions}
-        \item I've introduced and taught internal workers modern FP architecture
-        \item I've unified technology stack into more FP oriented one
-        \item Implemented and refactored most of microservices
-        \item Planned, designed and delivered several features
+        \item Introduced and taught internal workers modern FP architecture
+        \item Unified technology stack, implemented and refactored most of microservices
+        \item Designed and planned several features
         \end{missions}
-      }`
+      }
 %----------------------------------------------------------------------------
 \story{scala developer}
       {\href{https://www.intel.com/content/www/us/en/jobs/locations/poland.html}{Intel Technology Poland}}
       {07.2018 - 06.2019\\Gdańsk, Poland}
       {compilers, shapeless,\\scala-macros, fs2, zio,\\monocle, scalaz,\\antlr4, sbt}
-      {Work for pre-silicon group under Intel Network Division (before acquisition it was Fulcrum Microsystems from Caltech).
-        Essentially, company hired me to develop scala simulation model for next generation ethernet switch.
-        Due to the requirements change within organization, this activity was abandoned.
-        Since Network Division group lacked good, modern compiler support for pre-silicon memory design activities, we decided to focus on
+      {Worked for pre-silicon group under Intel Network Division (former Fulcrum Microsystems from Caltech).
+        Essentially, company hired me to develop simulation model for next generation ethernet switch in scala.
+        Due to priorities inversion, later my team focused on
         \href{https://www.accellera.org/downloads/standards/systemrdl}{SystemRDL 1.0} (SRDL) compiler development.
         Here are some of my key achievements:
         \begin{missions}
         \item I've developed probably first fully compliant, built-in SRDL1.0 preprocessor
         \item Redefined SRDL1.0 grammar
-        \item Designed and implemented purely functional memory model for next-gen Intel's ethernet switch simulator
+        \item Designed and implemented FP-aligned memory model for next-gen Intel's ethernet switch simulator
         \end{missions}
       }
 %----------------------------------------------------------------------------
@@ -109,10 +110,10 @@
       {March - June, 2018\\Gdańsk, Poland}
       {java, spark, docker,\\java-testcontainers,\\oracle, tomee}
       {Market Liquidity Credit Risk (MLQR) application development. It was an internal,
-        proprietary product, responsible for calculating daily credit risk
-        coefficient values.
+        proprietary product, responsible for calculating daily values of credit risk
+        coefficient.
         \begin{missions}
-        \item Developed local spark deployment of ETL job for test configuration
+        \item Developed local Spark deployment of ETL job for test configuration
         \item Code reviews \& bug fixing
         \end{missions}
       }
@@ -120,7 +121,7 @@
 \story{scala developer}{\href{https://www.scalac.io}{Scalac}}
       {2017 - 2018\\Gdańsk, Poland}
       {scala, akka-streams,\\graphql, cassandra,\\kafka, play, mtl,\\flink, marathon}
-      {For the vast majority of time spend at Scalac, my contribution was related with Qvantel - a Finnish business solution systems provider for telco companies.
+      {For the vast majority of time spend at Scalac, I worked for Qvantel - a Finnish business solution systems provider for telco companies.
         As a Scalac, we developed for Qvantel several microservices, mostly responsible for ETL jobs (messages transformation and ingestion).
         Scalable apps developed for Qvantel were deployed on emerging markets like Bolivia, Ecuador or Honduras. For one of them we satisfied client's constraint
         to process \approx12k messages per second. Next, the team was asked to develop proof-of-concept application utilizing GraphQL approach in order to get
@@ -177,7 +178,7 @@
       {2010 - 2011\\Gdańsk, Poland}
       {c++, c, vcl}
       {At Micromade, I was responsible for implementing brand new user interface of `bibinet` application.
-        It is a management software for their well known product for work time tracking and access control.
+        It is a management software for their-well known product for work time tracking and access control.
       }
 %----------------------------------------------------------------------------
 \story{internship}{\href{https://voicelab.ai}{Voicelab}}
@@ -193,7 +194,7 @@
       {Faculty of Electronics, Telecommunications and Informatics:
         \begin{missions}
           \item Master thesis: \textit{Implementation of lattice adaptive filters on the CUDA platform}
-          \item \href{https://projektgrupowy.eti.pg.gda.pl/editions/2/projects/496/posters/138}{\emph{Distinction of faculty dean for \itshape Anti-collision system for industrial robots}}
+          \item \href{https://projektgrupowy.eti.pg.gda.pl/editions/2/projects/496/posters/138}{\emph{Distinction of faculty dean for \itshape 'Anti-collision system for industrial robots'}}
         \end{missions}
       }
 

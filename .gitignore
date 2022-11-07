@@ -9,3 +9,4 @@
 *.key
 result
 luatex-cache
+./secrects.nix
