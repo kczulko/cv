@@ -4,73 +4,77 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs";
-    # nixpkgs = {
-      # url = "https://github.com/nixos/nixpkgs/archive/cc6cf0a96a627e678ffc996a8f9d1416200d6c81.tar.gz";
-      # flake = false;
-    # };
-    # secrets.url = "./secrets.nix";
   };
 
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pname = "kczulko-cv";
-
-        pkgs = nixpkgs.legacyPackages.${system};
-
-        lib = pkgs.lib;
-
+        pkgs = import nixpkgs { inherit system; };
         secrets = import ./secrets.nix;
+        secrectsAsList = with pkgs.lib;
+          mapAttrsToList
+            (name: value: ''!!!${name}!!! ${value}'')
+            (mapAttrs (name: value: escapeShellArg value) secrets)
+        ;
+        patchScript = pkgs.lib.foldl
+          (a: b: a + ''substituteInPlace ${pname}.tex --replace ${b}'' + "\n")
+          ""
+          secrectsAsList;
 
-        secrectsAsList = lib.mapAttrsToList (name: value: ''!!!${name}!!! ${value}'') (lib.mapAttrs (name: value: lib.escapeShellArg value) secrets);
+        kczulko-cv = pkgs.stdenv.mkDerivation
+          {
+            name = pname;
 
-        patchScript = lib.foldl (a: b: a + ''substituteInPlace ${pname}.tex --replace ${b}'' + "\n") "" secrectsAsList;
+            src = ./src;
 
-        derivationParams = {
-          name = pname;
+            postPatch = patchScript;
 
-          src = ./src;
+            buildInputs = with pkgs; [
+              (texlive.combine {
+                inherit (texlive)
+                  scheme-medium
+                  newenviron
+                  catoptions
+                  catchfile
+                  xstring
+                  lastpage
+                  libertine
+                  mweights
+                  fontaxes
+                  pbox
+                  needspace
+                  fontawesome
+                  realboxes
+                  forloop
+                  collectbox
+                  cv4tw;
+              })
+              glibcLocales
+            ];
 
-          # postPatch = patchScript;
+            buildPhase = ''
+              export TEXMFVAR=$(pwd)
+              lualatex -interaction=nonstopmode $name.tex
+              lualatex -interaction=nonstopmode $name.tex
+            '';
 
-          buildInputs = with pkgs; [
-            (texlive.combine {
-              inherit (texlive)
-                scheme-medium
-                newenviron
-                catoptions
-                catchfile
-                xstring
-                lastpage
-                libertine
-                mweights
-                fontaxes
-                pbox
-                needspace
-                fontawesome
-                realboxes
-                forloop
-                collectbox
-                cv4tw;
-            })
-            glibcLocales
-          ];
+            installPhase = ''
+              mkdir -p $out
+              cp $name.log $out
+              cp $name.pdf $out
+            '';
+          };
 
-      buildPhase = ''
-        export TEXMFVAR=$(pwd)
-        lualatex -interaction=nonstopmode $src/$name.tex
-        lualatex -interaction=nonstopmode $src/$name.tex
-      '';
-
-      installPhase = ''
-        mkdir -p $out
-        cp $name.log $out
-        cp $name.pdf $out
-      '';
-    };
-      in {
-        packages.${pname} = pkgs.stdenv.mkDerivation (derivationParams // secrets);
-        defaultPackage = self.packages.${system}.${pname};
-        devShell = pkgs.mkShell { buildInputs = derivationParams.buildInputs; };
+        show-cv = with pkgs; writeShellApplication {
+          name = "showcv";
+          text = ''${evince}/bin/evince ${kczulko-cv}/kczulko-cv.pdf'';
+        };
+      in
+      {
+        packages = { inherit kczulko-cv show-cv; }; 
+        defaultPackage = kczulko-cv;
+        devShell = pkgs.mkShell { buildInputs = [ show-cv ]; };
+        formatter = pkgs.nixpkgs-fmt;
       });
 }

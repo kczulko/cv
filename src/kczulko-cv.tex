@@ -6,10 +6,6 @@
 \usetheme[minuit]{sharp}
 %read env variables with secrets
 \usepackage{catchfile}
-\newcommand{\getenv}[2][]{%
-  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{}%
-  \ifx\temp\empty\def\temp{UNDEFINED}\fi
-  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
 % Not happy with the default style, or bullet ? Define yours !
 \setmystyle[missionbullet]{\color{soft}$>$~~}
 \setmystyle[assetbullet]{\color{icons}\faBook}
@@ -21,8 +17,8 @@
 %\academictitle{PhD}
 \firstname{Karol}
 \lastname{Czułkowski}
-\title{scala developer}
-\quote{\itshape Self employed scala developer with 10 years of overall experience}
+\title{functional dev}
+\quote{\itshape Self-employed functional developer with more than 10 years of overall experience}
 
 %\cvpicture{./samplepic.jpg}
 % Add up to 10 assets (0 to 9)
@@ -31,14 +27,14 @@
 \setcvasset[2]{\emph{Knowledge} sharing}
 \setcvasset[3]{\emph{Team} player}
 \setcvcontact[email]{karol.czulkowski@gmail.com}
-\setcvcontact[cellphone]{\getenv{CELLPHONE}}
+\setcvcontact[cellphone]{!!!CELLPHONE!!!}
 \setcvcontact[linkedin]{karol-czulkowski}
-\setcvcontact[twitter]{@kczulko}
+%% \setcvcontact[twitter]{@kczulko}
 \setcvcontact[github]{kczulko}
 \setcvcontact[spokenlanguages]{pl, en}
-\setcvcontact[age]{\getenv{DATE_OF_BIRTH}}
+\setcvcontact[age]{!!!DATE_OF_BIRTH!!!}
 \setcvcontact[address]{
-  \getenv{ADDRESS_STREET}\\\getenv{ADDRESS_ZIP_CITY}\\\getenv{ADDRESS_COUNTRY}
+  !!!ADDRESS_STREET!!!\\!!!ADDRESS_ZIP_CITY!!!\\!!!ADDRESS_COUNTRY!!!
 }
 % colors for \hyperref urls
 \hypersetup{
@@ -51,16 +47,18 @@
 \section{Experience}
 %----------------------------------------------------------------------------
 \story{functional engineer}
-      {\href{https://www.tweag.io}{tweag.io}}
+      {\href{https://www.tweag.io}{Tweag}}
       {10.2021 - now\\Remote}
-      {bazel, haskell, scala\\golang, akka-typed\\akka-streams, sbt}
-      { Tweag is a software innovation lab from France, gathering people around
-        functional programming (mostly \href{https://www.haskell.org}{haskell}) and modern
-        software distribution stack (\href{https://nixos.org}{nixos} \& \href{https://bazel.build}{bazel})
+      {bazel, haskell, nix, scala\\golang, akka-typed\\akka-streams, sbt}
+      { \href{tweag.io}{Tweag} is a software innovation lab from France, gathering people around
+        functional programming (mostly \href{https://www.haskell.org}{Haskell}) and modern
+        software distribution stack like \href{https://nixos.org}{Nix} \& \href{https://bazel.build}{Bazel}.
         \begin{missions}
-          \item Maintainer of \href{https://github.com/tweag/gazelle_cabal}{https://github.com/tweag/gazelle\_cabal}
-          \item Under contract to \href{https://www.digitalasset.com}{Digital Asset} - DAML smart-contract platform
-          \item Under contract to \href{https://www.heb.com}{H-E-B} - grocery retail from Texas, USA
+        \item Maintainer of \href{https://github.com/tweag/gazelle_cabal}{https://github.com/tweag/gazelle\_cabal}
+        \item Under contract to \href{https://www.digitalasset.com}{Digital Asset} -
+          Daml/Canton smart contract platform
+        \item Under contract to \href{https://www.heb.com}{H-E-B} -
+          grocery retail from Texas, USA
         \end{missions}
       }
 %----------------------------------------------------------------------------
@@ -68,9 +66,7 @@
       {\href{https://www.epam.com}{Epam Systems} (under contract to \href{https://www.ubs.com}{UBS})}
       {08.2020 - 10.2021\\Wrocław, Poland}
       {scala, akka-http, cats,\\akka-streams, kafka,\\bash, gradle}
-      {Member of Next Generation Archive solution team. Delivering a system designed to store banking documents.
-        It was a typical CRUD, web-based application build on the top of Hitachi database.
-        As a developer I was responsible for implementing new features, improvements, bug fixes, L3 support and doing code reviews.
+      {Member of Next Generation Archive solution team, delivering a system designed to store banking documents.
       }
 %----------------------------------------------------------------------------
 \story{scala developer}
@@ -79,9 +75,9 @@
       {scala, cats, http4s,\\shapeless, tagless-final,\\fs2, bazel, nix, kafka,\\elasticsearch,\\microservices,\\kubernetes,\\postgres
       }
       {Development of HDFS metadata indexing hub (proprietary solution akin to \href{https://egeria.odpi.org}{egeria}).
-        Product I work on has service oriented architecture build on the top of
-        Elasticsearch. It allows data scientists to search for any data that exists
-        within Nordea's data lake. Please find some of my achievements below:
+        It was a product with a service oriented architecture build on the top of
+        Elasticsearch, allowing data scientists to search for any data that exists
+        within Nordea's data lake.
         \begin{missions}
         \item Introduced and taught internal workers modern FP architecture
         \item Unified technology stack, implemented and refactored most of microservices
@@ -124,8 +120,9 @@
       {For the vast majority of time spend at Scalac, I worked for Qvantel - a Finnish business solution systems provider for telco companies.
         As a Scalac, we developed for Qvantel several microservices, mostly responsible for ETL jobs (messages transformation and ingestion).
         Scalable apps developed for Qvantel were deployed on emerging markets like Bolivia, Ecuador or Honduras. For one of them we satisfied client's constraint
-        to process \approx12k messages per second. Next, the team was asked to develop proof-of-concept application utilizing GraphQL approach in order to get
-        rid of plenty RESTful services and improve Qvantel's business. Please find more about this cooperation under \emph{Publications / public speeches} section.
+        to process \approx12k messages per second. Next, the team was asked to develop proof-of-concept
+        GraphQL application optimizing as a replacement for existing RESTful based stack. More about this
+        cooperation can be found under \emph{Publications / public speeches} section.
       }
 %----------------------------------------------------------------------------
 \story{software engineer}
@@ -139,7 +136,7 @@
         Later, I joined development team of
         \href{https://www.intel.com/content/www/us/en/architecture-and-technology/rack-scale-design/pod-manager-user-guide-v2-1.html}{POD Manager} component,
         where I spend most of my time at Intel. I've been developing RESTful web service, responsible for assembly and system composition of Intel's RSD. 
-        Some of my work can still be found at github \emph{\href{https://github.com/intel/intelRSD}{intel/intelRSD}}. Below are some of my key achievements:
+        Some of my work can still be found at github \emph{\href{https://github.com/intel/intelRSD}{intel/intelRSD}}.
         \begin{missions}
         \item I've developed most of testing code \& libraries (\textasciitilde50\% of commits were mine)
         \item Implemented PODManager composition logic
@@ -163,10 +160,9 @@
       {\href{https://sii.pl/en/}{SII} (under contract to Intel Technology Poland)}
       {2011 - 2012\\Gdańsk, Poland}
       {c\#, tcl,\\python, bash}
-      {Rapid Storage Technology Enterprise validation. The team I joined took over the  responsibility
+      {Rapid Storage Technology Enterprise validation. The team I joined took over the responsibility
         for \href{https://en.wikipedia.org/wiki/Mdadm}{\emph{mdadm}} validation, where Intel
-        made support for their metadata. Later on I was responsible for Intel's iSCSI driver validation.
-        Please find below some of my key achievements:
+        made support for their metadata. Later on, I was responsible for Intel's iSCSI driver validation.
         \begin{missions}
         \item Implemented python-based testing framework for CIM RAID interface
         \item Developed C\# library for storage discovery
@@ -174,18 +170,13 @@
         \end{missions}
       }
 %----------------------------------------------------------------------------
-\story{software engineer}{\href{https://micromade.pl}{Micromade}}
-      {2010 - 2011\\Gdańsk, Poland}
-      {c++, c, vcl}
-      {At Micromade, I was responsible for implementing brand new user interface of `bibinet` application.
-        It is a management software for their-well known product for work time tracking and access control.
-      }
-%----------------------------------------------------------------------------
-\story{internship}{\href{https://voicelab.ai}{Voicelab}}
-      {2009 - 2010\\Gdańsk, Poland}
-      {matlab, c, php}
-      {During my studies I was hired by Voicelab to develop several matlab simulations
-        and php-based website utilizing noise reduction algorithms for sound recordings.
+\story{internship}{\href{https://voicelab.ai}{Voicelab} and \href{https://micromade.pl}{Micromade}}
+      {2009 - 2011\\Gdańsk, Poland}
+      {c++, c, vcl, matlab, php}
+      {During my studies I was hired by Voicelab to develop several Matlab simulations and php-based
+        website, utilizing noise reduction algorithms for sound recordings. On the other hand, at Micromade,
+        I was responsible for implementing brand new user interface of `bibinet` application - their well-known
+        product for access control and work time tracking.
       }
 %----------------------------------------------------------------------------
 \section{Education}
@@ -198,8 +189,37 @@
         \end{missions}
       }
 
-      \section{Publications / Public speeches}
-      \label{Publications}
+%----------------------------------------------------------------------------
+\section{Open source}
+\story{\href{https://github.com/kczulko/rules\_elm}{rules\_elm}}{Bazel}{Bazel}
+      {bazel, nix, elm}
+      {Maintainer of \href{https://github.com/kczulko/rules\_elm}{rules\_elm} - rules for building Elm applications using the Bazel build system.
+      }
+\story{\href{https://github.com/tweag/gazelle\_cabal}{gazelle\_cabal}}{Bazel}{Bazel}
+      {bazel, haskell, nix, go}
+      {Maintainer of \href{https://github.com/tweag/gazelle\_cabal}{gazelle\_cabal} - gazelle extension for converting Cabal build to Bazel
+      }
+\story{\href{https://github.com/kczulko/daml-mode-flake}{daml-mode-flake}}{Nix}{Nix}
+      {nix}
+      {Nix derivation for Emacs \href{https://github.com/digital-asset/daml}{Daml mode}
+      }
+\story{\href{https://github.com/kczulko/nixos-config}{nixos-config}}{NixOS}{NixOS}
+      {nix, bash}
+      {My NixOS configuration and some dotfiles
+      }
+\story{various contributions}{github}{github}
+      {scala, cabal, sbt}
+      {Many, small contributions to variety of projects.
+      }
+
+\section{Publications / Public speeches}
+\story{Tweag}{Blog}{2022\\Paris, France}
+      {bazel, nix,\\cabal,\\haskell elm}
+      {Converting a polyglot project build to Bazel
+        \begin{missions}
+          \item \href{https://www.tweag.io/blog/2022-10-20-bazel-example-servant-elm-1/}{Part 1}
+        \end{missions}
+      }
 \story{Functional Tricity}{Meetup}{2017\\Gdańsk, Poland}
       {scala, shapeless,\\typeclasses,\\scala compiler}
       {Yet another real-life (live) shapeless example
@@ -221,20 +241,20 @@
 \skill[English]{ Fluent }
 \end{skills}
 
-\begin{skills}{Programming}
-  \skill[FP]{Utilize functional programming concepts to deliver reliable, composable software.}
-  \skill[Languages]{Worked with multiple of technologies and programming languages.}
-  \skill[Automation]{Never do the same manual work twice.}
-\end{skills}
+%% \begin{skills}{Programming}
+%%   \skill[FP]{Utilize functional programming concepts to deliver reliable, composable software.}
+%%   \skill[Languages]{Worked with multiple of technologies and programming languages.}
+%%   \skill[Automation]{Never do the same manual work twice.}
+%% \end{skills}
 
-\begin{fields}{Scoring}{3}{5}
-  \field{Scala}{5}
-  \field{Functional Programming}{4}
-  \field{Shapeless}{4}
-  \field{Cats}{5}
-  \field{build tools}{4}
-  \field{fs2}{4}
-\end{fields}
+%% \begin{fields}{Scoring}{3}{5}
+%%   \field{Scala}{5}
+%%   \field{Functional Programming}{4}
+%%   \field{Shapeless}{4}
+%%   \field{Cats}{5}
+%%   \field{build tools}{4}
+%%   \field{fs2}{4}
+%% \end{fields}
 
 %\textit{I hereby give consent for my personal data included in my offer to be processed for the purposes of recruitment, in accordance with the Personal Data Protection Act dated 23.08.1997 (uniform text: Journal of Laws of the Republic of Poland 2002 No 101, item 926 with further amendments).}
 
