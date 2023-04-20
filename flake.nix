@@ -74,7 +74,7 @@
       {
         packages = { inherit kczulko-cv show-cv; }; 
         defaultPackage = kczulko-cv;
-        devShell = pkgs.mkShell { buildInputs = [ show-cv ]; };
+        devShell = pkgs.mkShell { buildInputs = with pkgs;[ git-crypt ]; };
         formatter = pkgs.nixpkgs-fmt;
       });
 }

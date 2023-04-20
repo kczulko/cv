@@ -33,3 +33,9 @@ $ nix run .#show-cv
 ```
 $ nix fmt
 ```
+
+1. Git crypt:
+
+```
+$ git-crypt unlock <your_symmetric.key>
+```
