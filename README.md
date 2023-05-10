@@ -18,24 +18,24 @@
 
 1. Build pdf document:
 
-``` bash
-$ nix build
-```
+   ``` bash
+   $ nix build
+   ```
 
 1. Examine document with `evince`:
 
-```
-$ nix run .#show-cv
-```
+   ```
+   $ nix run .#show-cv
+   ```
 
 1. Nix files formatting:
 
-```
-$ nix fmt
-```
+   ```
+   $ nix fmt
+   ```
 
 1. Git crypt:
 
-```
-$ git-crypt unlock <your_symmetric.key>
-```
+   ```
+   $ git-crypt unlock <your_symmetric.key>
+   ```
