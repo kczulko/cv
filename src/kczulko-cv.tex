@@ -5,7 +5,7 @@
 %% \usetheme[optional scheme]{theme}
 \usetheme[minuit]{sharp}
 %read env variables with secrets
-\usepackage{catchfile}
+%% \usepackage{catchfile}
 % Not happy with the default style, or bullet ? Define yours !
 \setmystyle[missionbullet]{\color{soft}$>$~~}
 \setmystyle[assetbullet]{\color{icons}\faBook}
@@ -18,15 +18,15 @@
 \firstname{Karol}
 \lastname{Czułkowski}
 \title{functional dev}
-\quote{\itshape Self-employed functional developer with more than 10 years of overall experience}
+\quote{\itshape Self-employed functional developer with ~ 13 years of overall experience}
 
 %\cvpicture{./samplepic.jpg}
 % Add up to 10 assets (0 to 9)
 \setcvasset[0]{\emph{Experienced} software developer}
-\setcvasset[1]{\emph{Functional} Programming}
+\setcvasset[1]{\emph{Functional} programming}
 \setcvasset[2]{\emph{Knowledge} sharing}
-\setcvasset[3]{\emph{Team} player}
-\setcvcontact[email]{karol.czulkowski@gmail.com}
+\setcvasset[3]{\emph{Build} systems}
+\setcvcontact[email]{karol.czulkowski@pm.me}
 \setcvcontact[cellphone]{!!!CELLPHONE!!!}
 \setcvcontact[linkedin]{karol-czulkowski}
 %% \setcvcontact[twitter]{@kczulko}
@@ -36,6 +36,8 @@
 \setcvcontact[address]{
   !!!ADDRESS_STREET!!!\\!!!ADDRESS_ZIP_CITY!!!\\!!!ADDRESS_COUNTRY!!!
 }
+
+%% \PassOptionsToPackage{hidelinks=false}{hyperref}
 % colors for \hyperref urls
 \hypersetup{
   colorlinks = false,
@@ -44,209 +46,12 @@
   urlbordercolor = {0 1 1}
 }
 \begin{document}
-\section{Experience}
-%----------------------------------------------------------------------------
-\story{functional engineer}
-      {\href{https://www.tweag.io}{Tweag}}
-      {10.2021 - now\\Remote}
-      {bazel, haskell, nix, scala\\golang, akka-typed\\akka-streams, sbt}
-      { \href{tweag.io}{Tweag} is a software innovation lab from France, gathering people around
-        functional programming (mostly \href{https://www.haskell.org}{Haskell}) and a modern
-        software distribution stack like \href{https://nixos.org}{Nix} \& \href{https://bazel.build}{Bazel}.
-        \begin{missions}
-        \item Under contract to \href{https://www.digitalasset.com}{Digital Asset} -
-          Daml/Canton smart contract platform
-        \item Under contract to \href{https://www.heb.com}{H-E-B} -
-          grocery retail from Texas, USA
-        \end{missions}
-      }
-%----------------------------------------------------------------------------
-\story{scala developer}
-      {\href{https://www.epam.com}{Epam Systems} (under contract to \href{https://www.ubs.com}{UBS})}
-      {08.2020 - 10.2021\\Wrocław, Poland}
-      {scala, akka-http, cats,\\akka-streams, kafka,\\bash, gradle}
-      {Member of Next Generation Archive team, where we've been delivering a proprietary storage solution built on
-        top of Hitachi database.
-      }
-%----------------------------------------------------------------------------
-\story{scala developer}
-      {\href{https://www.jit.team}{Jit Team} (under contract to \href{https://www.nordea.com}{Nordea Poland})}
-      {07.2019 - 05.2020\\Gdynia, Poland}
-      {scala, cats, http4s,\\shapeless, tagless-final,\\fs2, bazel, nix, kafka,\\elasticsearch,\\microservices,\\kubernetes,\\postgres
-      }
-      {Development of HDFS metadata indexing hub (proprietary solution akin to \href{https://egeria.odpi.org}{egeria}).
-        It was a product with a service oriented architecture build on the top of
-        Elasticsearch, allowing data scientists to search for any data that exists
-        within Nordea's data lake.
-        \begin{missions}
-        \item Introduced and taught internal workers modern FP architecture
-        \item Unified technology stack, implemented and refactored most of microservices
-        \item Designed and planned several features
-        \end{missions}
-      }
-%----------------------------------------------------------------------------
-\story{scala developer}
-      {\href{https://www.intel.com/content/www/us/en/jobs/locations/poland.html}{Intel Technology Poland}}
-      {07.2018 - 06.2019\\Gdańsk, Poland}
-      {compilers, shapeless,\\scala-macros, fs2, zio,\\monocle, scalaz,\\antlr4, sbt}
-      {Worked for pre-silicon group under Intel Network Division (former Fulcrum Microsystems from Caltech).
-        Developed simulation model for the next generation ethernet switch. In a team of three people, we've
-        managed to develop the initial version of
-        \href{https://www.accellera.org/downloads/standards/systemrdl}{SystemRDL 1.0} (SRDL) compiler.
-        \begin{missions}
-        \item I've developed probably first fully compliant, built-in SRDL1.0 preprocessor
-        \item Redefined SRDL1.0 grammar
-        \item Designed and implemented FP-aligned memory model for next-gen Intel's ethernet switch simulator
-        \end{missions}
-      }
-%----------------------------------------------------------------------------
-\story{senior java developer}
-      {\href{https://diversecg.pl/}{DCG} (under contract to Nordea Capital Markets)}
-      {March - June, 2018\\Gdańsk, Poland}
-      {java, spark, docker,\\java-testcontainers,\\oracle, tomee}
-      {Market Liquidity Credit Risk (MLQR) application development. It was an internal,
-        proprietary product, responsible for calculating daily values of credit risk
-        coefficient.
-      }
-%----------------------------------------------------------------------------
-\story{scala developer}{\href{https://www.scalac.io}{Scalac}}
-      {2017 - 2018\\Gdańsk, Poland}
-      {scala, akka-streams,\\graphql, cassandra,\\kafka, play, mtl,\\flink, marathon}
-      {For the vast majority of time spent at Scalac, I worked for Qvantel - a Finnish business solution
-        systems provider for telco companies. As a Scalac, we developed for Qvantel several microservices,
-        mostly responsible for ETL jobs. Scalable apps developed for Qvantel were deployed in emerging markets
-        like Bolivia, Ecuador or Honduras. For one of them we satisfied the client's constraint
-        to process \approx12k messages per second. Next, the team was asked to develop proof-of-concept
-        GraphQL application as an optimizing and replacement for existing RESTful based stack. More about this
-        cooperation can be found under \emph{Publications / public speeches} section.
-      }
-%----------------------------------------------------------------------------
-\story{software engineer}
-      {\href{https://www.intel.com/content/www/us/en/jobs/locations/poland.html}
-        {Intel Technology Poland}}
-      {2014 - 2017\\Gdańsk, Poland}
-      {java ee, c\#, c++11,\\gradle, docker,\\orientdb, postgres,\\nodejs, bash}
-      {Initially, I joined the company as a \href{https://www.intel.com/intelRSD}{Rackscale Design (RSD)} validation engineer, where
-        I developed high quality testing libraries and gave mentorship to other team members. Next, I became the RSD firmware developer,
-        where I helped to model LVM system under firmware component. Later, I was moved to the
-        \href{https://www.intel.com/content/www/us/en/architecture-and-technology/rack-scale-design/pod-manager-user-guide-v2-1.html}{POD Manager} component,
-        where I spend most of my time at Intel. Essentially, I've been developing a RESTful web service, responsible
-        for assembly and system composition of Intel's RSD. Some of my work can still be found at github
-        \emph{\href{https://github.com/intel/intelRSD}{intel/intelRSD}}.
-        \begin{missions}
-        \item I've developed most of testing code \& libraries (\textasciitilde50\% of commits were mine)
-        \item Implemented PODManager composition logic
-        \item Implemented services discovery over network through DHCP
-        \end{missions}
-      }      
-%----------------------------------------------------------------------------
-\story{software engineer}{\href{https://www.finastra.com/}{Misys}}
-      {2012 - 2014\\Gdynia, Poland}
-      {c++, c, stl, boost,\\java, groovy, bash,\\sybase, rendezvous}
-      {Development of Kondor+, a market-leading trade and risk management platform,
-        allowing users to manage global trading activities. Kondor+ had the broadest
-        installed base worldwide with more than 450 sites in 67 countries.
-      }
-%----------------------------------------------------------------------------
-\story{software engineer}
-      {\href{https://sii.pl/en/}{SII} (under contract to Intel Technology Poland)}
-      {2011 - 2012\\Gdańsk, Poland}
-      {c\#, tcl,\\python, bash}
-      {Rapid Storage Technology Enterprise validation. The team I joined took over the responsibility
-        for \href{https://en.wikipedia.org/wiki/Mdadm}{\emph{mdadm}} validation, where Intel
-        made support for their metadata. Later on, I was responsible for Intel's iSCSI driver validation.
-        \begin{missions}
-        \item Implemented python-based testing framework for CIM RAID interface
-        \item Developed C\# library for storage discovery
-        \item Developed dozen of mdadm tests
-        \end{missions}
-      }
-%----------------------------------------------------------------------------
-\story{internship}{\href{https://voicelab.ai}{Voicelab} and \href{https://micromade.pl}{Micromade}}
-      {2009 - 2011\\Gdańsk, Poland}
-      {c++, c, vcl,\\matlab, php}
-      {During my studies I was hired by Voicelab to develop several Matlab simulations and the php-based
-        website, utilizing noise reduction algorithms for sound recordings. On the other hand at Micromade,
-        I was responsible for implementing the brand new user interface of `bibinet` application - their well-known
-        product for access control and work time tracking.
-      }
-%----------------------------------------------------------------------------
-\section{Education}
-\story{M.Sc., engineer}{Gdańsk University of Technology}{2006 - 2011\\Gdańsk, Poland}
-      {Control Engineering\\and Robotics}
-      {Faculty of Electronics, Telecommunications and Informatics:
-        \begin{missions}
-          \item Master thesis: \textit{Implementation of lattice adaptive filters on the CUDA platform}
-          \item \href{https://projektgrupowy.eti.pg.gda.pl/editions/2/projects/496/posters/138}{\emph{Distinction of faculty dean for \itshape 'Anti-collision system for industrial robots'}}
-        \end{missions}
-      }
 
-%----------------------------------------------------------------------------
-\section{Open source}
-\story{\href{https://github.com/kczulko/rules\_elm}{rules\_elm}}{Bazel}{Bazel}
-      {bazel, nix, elm}
-      {Maintainer of \href{https://github.com/kczulko/rules\_elm}{rules\_elm} - rules for building Elm applications using the Bazel build system.
-      }
-\story{\href{https://github.com/tweag/gazelle\_cabal}{gazelle\_cabal}}{Bazel}{Bazel}
-      {bazel, haskell,\\nix, go}
-      {Maintainer of \href{https://github.com/tweag/gazelle\_cabal}{gazelle\_cabal} - gazelle extension for converting Cabal build to Bazel
-      }
-\story{\href{https://github.com/kczulko/daml-mode-flake}{daml-mode-flake}}{Nix}{Emacs}
-      {nix}
-      {Nix derivation for Emacs \href{https://github.com/digital-asset/daml}{Daml mode}
-      }
-\story{\href{https://github.com/kczulko/nixos-config}{nixos-config}}{NixOS}{NixOS}
-      {nix, bash}
-      {My NixOS configuration and some dotfiles
-      }
-\story{various contributions}{github}{github}
-      {scala, cabal, sbt}
-      {Many, small contributions to variety of projects.
-      }
-
-\section{Publications / Public speeches}
-\story{Tweag}{Blog}{2022\\Paris, France}
-      {bazel, haskell,\\cabal, nix\\elm}
-      {Converting a polyglot project build to Bazel
-        \begin{missions}
-          \item \href{https://www.tweag.io/blog/2022-10-20-bazel-example-servant-elm-1/}{Part 1}
-        \end{missions}
-      }
-\story{Functional Tricity}{Meetup}{2017\\Gdańsk, Poland}
-      {scala, shapeless,\\typeclasses,\\scala compiler}
-      {Yet another real-life (live) shapeless example
-        \begin{missions}
-          \item \href{https://www.youtube.com/watch?v=cek9Hio7aZg}{https://www.youtube.com/watch?v=cek9Hio7aZg}
-        \end{missions}
-      }
-\story{EMEoutlook}{Publication}{2017\\Helsinki, Finland}
-      {scala, enterprise,\\functional programming}
-      {Scale fast with Scalac
-        \begin{missions}
-          \item \href{https://issuu.com/outlookpublishing/docs/qvantel}{https://issuu.com/outlookpublishing/docs/qvantel}
-        \end{missions}
-      }
-
-\section{Skills}
-\begin{skills} {Language}
-\skill[Polish]{ Mother tongue }
-\skill[English]{ Fluent }
-\end{skills}
-
-%% \begin{skills}{Programming}
-%%   \skill[FP]{Utilize functional programming concepts to deliver reliable, composable software.}
-%%   \skill[Languages]{Worked with multiple of technologies and programming languages.}
-%%   \skill[Automation]{Never do the same manual work twice.}
-%% \end{skills}
-
-%% \begin{fields}{Scoring}{3}{5}
-%%   \field{Scala}{5}
-%%   \field{Functional Programming}{4}
-%%   \field{Shapeless}{4}
-%%   \field{Cats}{5}
-%%   \field{build tools}{4}
-%%   \field{fs2}{4}
-%% \end{fields}
+\input{sections/experience}
+\input{sections/education}
+\input{sections/open-source}
+\input{sections/publications}
+\input{sections/skills}
 
 %\textit{I hereby give consent for my personal data included in my offer to be processed for the purposes of recruitment, in accordance with the Personal Data Protection Act dated 23.08.1997 (uniform text: Journal of Laws of the Republic of Poland 2002 No 101, item 926 with further amendments).}
 
